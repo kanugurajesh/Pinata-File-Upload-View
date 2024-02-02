@@ -13,13 +13,15 @@ export async function POST(request: NextRequest) {
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
 
-  const path = join("/", "tmp", file.name);
-  await writeFile(path, buffer, (err) => {
-    if (err) {
-      console.error(err);
-      return NextResponse.json({ success: false });
-    }
-  });
+//   const path = join("/", "tmp", file.name);
+//   await writeFile(path, buffer, (err) => {
+//     if (err) {
+//       console.error(err);
+//       return NextResponse.json({ success: false });
+//     }
+//   });
+
+  
 
   return NextResponse.json({ success: true });
 }
